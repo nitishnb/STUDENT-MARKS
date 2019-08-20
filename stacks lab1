@@ -1,0 +1,69 @@
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+#define MAX 10
+
+int top=-1, stack[MAX];
+void push();
+void pop();
+void display();
+
+void main()
+{
+  int ch;
+ while(1)
+  {
+  printf("\n STACK MENU");
+  printf("\n1.push\n2.pop\n3.display\n4.exit");
+  printf("\n Enter your choice(1-4)");
+  scanf("%d",&ch);
+  switch(ch)
+  {
+   case 1: push();
+	   break;
+   case 2: pop();
+	   break;
+   case 3: display();
+	   break;
+   case 4: exit(0);
+   default:
+	   printf("\n INVALID CHOICE");
+  }
+  }
+  getch();
+}
+void push()
+{
+ int val;
+ if(top==MAX-1)
+   printf("\n STACK OVERFLOW....!");
+ else
+ {
+   printf("\nEnter element to push:");
+   scanf("%d",&val);
+   top=top+1;
+   stack[top]=val;
+ }
+}
+void pop()
+{
+ if(top==-1)
+   printf("\n STACK UNDERFLOW...!");
+ else
+ {
+   printf("\n The deleted element is %d",stack[top]);
+   top=top-1;
+ }
+}
+void display()
+{
+ int i;
+ if(top==-1)
+   printf("\nSTACK IS EMPTY....!");
+ else
+ {
+   printf("\n stack is..... ");
+   for(i=0;i<=top;i++)
+     printf("%d\t",stack[i]);
+ }
+}
