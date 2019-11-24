@@ -1,6 +1,3 @@
-/*
- *  --- Queue using LinkedList ---
- */
 #include<stdio.h>
 #include<stdlib.h>
 
